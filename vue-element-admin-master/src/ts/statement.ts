@@ -12,8 +12,36 @@
 // declare global 扩展全局变量
 // declare module 扩展模块
 // /// <reference /> 三斜线指令
-
+// https://github.com/huangqingpeng/typescript-tutorial/blob/master/basics/declaration-files.md
 
 declare var a: string 
 a="hqp"
 console.log(a)
+
+// declare function
+declare function jQuery(selector: string): any;
+
+
+
+ // declare class 当全局变量是一个类的时候，我们用 declare class 来定义它的类型
+
+declare class  Animal{
+  nam: string;
+  constructor(name: string);
+  sayHi(): string;
+}
+
+class Animals{
+  name = "animals";
+  constructor(name: string) {
+    this.name = name;
+  }
+  sayHi() {
+    return `My name is ${this.name}`;
+    // return 5
+  }
+}
+
+let cat = new Animals('Tom');
+console.log(cat);
+console.log(cat.sayHi());

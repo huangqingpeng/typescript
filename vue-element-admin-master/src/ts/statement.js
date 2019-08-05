@@ -12,5 +12,20 @@
 // declare global 扩展全局变量
 // declare module 扩展模块
 // /// <reference /> 三斜线指令
-var a = "hqp";
+// https://github.com/huangqingpeng/typescript-tutorial/blob/master/basics/declaration-files.md
+a = "hqp";
 console.log(a);
+var Animals = /** @class */ (function () {
+    function Animals(name) {
+        this.name = "animals";
+        this.name = name;
+    }
+    Animals.prototype.sayHi = function () {
+        return "My name is " + this.name;
+        // return 5
+    };
+    return Animals;
+}());
+var cat = new Animals('Tom');
+console.log(cat);
+console.log(cat.sayHi());
